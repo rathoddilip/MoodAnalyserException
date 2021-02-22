@@ -39,7 +39,7 @@ namespace MoodAnalyserNUnitTestProject
         [Test]
         public void ConstructorInSadMoodShouldReturnSad()
         {
-            moodAnalyser = new MoodAnalyser("I am in sad mood ");//parameter constructor
+            moodAnalyser = new MoodAnalyser("I am in sad mood ");
             string expected = "SAD";
             string actual = moodAnalyser.MoodAnalyseConstructorMethod();
             Assert.AreEqual(expected, actual);
@@ -52,7 +52,7 @@ namespace MoodAnalyserNUnitTestProject
         [Test]
         public void ConstructorInHappyMoodShouldReturnHappy()
         {
-            moodAnalyser = new MoodAnalyser("I am in Happy mood ");//parameter constructor
+            moodAnalyser = new MoodAnalyser("I am in Happy mood ");
             string expected = "HAPPY";
             string actual = moodAnalyser.MoodAnalyseConstructorMethod();
             Assert.AreEqual(expected, actual);
