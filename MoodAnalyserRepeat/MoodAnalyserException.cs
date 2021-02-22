@@ -4,11 +4,11 @@ using System.Text;
 
 namespace MoodAnalyserRepeat
 {
-    class MoodAnalyserException:Exception
+   public class MoodAnalyserException:Exception
     {
         public enum ExceptionType //Enum class
         {
-            NULL_MOOD,
+            NULL_MOOD,EMPTY_MOOD,
         }
         public ExceptionType exceptionType; // created ojbect of enum class
 

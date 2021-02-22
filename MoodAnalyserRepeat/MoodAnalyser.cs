@@ -44,15 +44,22 @@ namespace MoodAnalyserRepeat
         /// <returns></returns>
         public string MoodAnalyseConstructorMethod()
         {
-
-            if (this.message.ToLower().Contains("sad"))
+            try
             {
-                return "SAD";
+                if (this.message.Equals(string.Empty))
+                {
+                    throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.EMPTY_MOOD, "mood should not empty");
+                }
+                if (this.message.ToLower().Contains("sad"))
+                    return "SAD";
+                else
+                    return "HAPPY";
             }
-            else
+            catch(NullReferenceException)
             {
-                return "HAPPY";
+                throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.NULL_MOOD, "mood should not null");
             }
-        }
-    }
-}
+       }
+       
+    }//MoodAnalyserClass
+}//namespace

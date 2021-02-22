@@ -70,5 +70,37 @@ namespace MoodAnalyserNUnitTestProject
             Assert.AreEqual(excepted,actual);
 
         }
+        /// <summary>
+        /// TC 3.1 given null mood should throw mood analyser custome  exception 
+        /// </summary>
+        [Test]
+        public void NullMoodShouldThrowException()
+        { 
+            try
+            {
+                moodAnalyser = new MoodAnalyser(null);
+                string result = moodAnalyser.MoodAnalyseConstructorMethod();
+            }
+            catch(MoodAnalyserException exception)
+            {
+                Assert.AreEqual("mood should not null",exception.Message);
+            }
+        }
+        /// <summary>
+        /// TC 3.2 empty mood should throw custome exception
+        /// </summary>
+        [Test]
+        public void EmptyMoodShouldThrowException()
+        {
+            try
+            {
+                moodAnalyser = new MoodAnalyser("");
+                string result = moodAnalyser.MoodAnalyseConstructorMethod();
+            }
+            catch (MoodAnalyserException exception)
+            {
+                Assert.AreEqual("mood should not empty", exception.Message);
+            }
+        }
     }
 }
