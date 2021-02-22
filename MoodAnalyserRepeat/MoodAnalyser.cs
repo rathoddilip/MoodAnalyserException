@@ -26,10 +26,17 @@ namespace MoodAnalyserRepeat
         /// <returns></returns>
         public string MoodAnalyserMethod(string message)
         {
-            if (message.ToLower().Contains("sad"))
-               return "SAD";
-            else
+            try
+            {
+                if (message.ToLower().Contains("sad"))
+                    return "SAD";
+                else
+                    return "HAPPY";
+            }
+            catch (NullReferenceException )
+            {
                 return "HAPPY";
+            }
         }
         /// <summary>
         /// Constructor method 
@@ -37,6 +44,7 @@ namespace MoodAnalyserRepeat
         /// <returns></returns>
         public string MoodAnalyseConstructorMethod()
         {
+
             if (this.message.ToLower().Contains("sad"))
             {
                 return "SAD";

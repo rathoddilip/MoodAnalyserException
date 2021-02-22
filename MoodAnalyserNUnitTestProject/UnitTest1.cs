@@ -57,5 +57,18 @@ namespace MoodAnalyserNUnitTestProject
             string actual = moodAnalyser.MoodAnalyseConstructorMethod();
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// TC 2.1 Null mood should return happy 
+        /// Exception handling
+        /// </summary>
+         [Test]
+        public void NullMoodShouldReturnHappy()
+        {
+            string inputMessage = null;
+            string excepted = "HAPPY";
+            string actual = moodAnalyser.MoodAnalyserMethod(inputMessage);
+            Assert.AreEqual(excepted,actual);
+
+        }
     }
 }
